@@ -68,7 +68,7 @@ if( Yii::$app->getSession()->hasFlash('success') ) {
 		</tr>
 		<tr>
 			<td colspan="5"></td>
-			<td><a href=""><input type="button" value="Manage Customer Records"></a></td>
+			<td><a href="<?php echo Url::toRoute(['customer/getcustomerlist','p'=>'AllCustomerList']) ?>"><input type="button" value="Manage Customer Records"></a></td>
 		</tr>
 		<tr >
 			<td colspan='6' class="success">Campaigns</td>
@@ -86,7 +86,7 @@ if( Yii::$app->getSession()->hasFlash('success') ) {
 			<td><?php echo $v['name'];?></td>
 			<td>40</td>
 			<td>210</td>
-			<td style="width:15%;"><a href=""><input type="button" value="Add">&nbsp;<a href=""><input type="button" value="Lookup"></td>
+			<td style="width:15%;"><a href="<?php echo Url::toRoute(['customer/add','p'=>'AddNewCustomer','campaign_id'=>$v['id']])?>"><input type="button" value="Add">&nbsp;<a href="<?php echo Url::toRoute(['customer/index','p'=>'LookupCustomer','campaign_id'=>$v['id']])?>"><input type="button" value="Lookup"></td>
 			<td>active</td>
 			<td style="text-align:center;"><a href="<?php echo Url::toRoute(['campaign/editcampaign','campaign_id'=>$v['id']]); ?>" ><input type="button" value="Edit"></a></td>
 		</tr>
